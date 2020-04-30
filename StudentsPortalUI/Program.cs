@@ -17,6 +17,7 @@ namespace StudentsPortalUI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Authorisation());
+            Startup startup = new Startup();
         }
     }
 }

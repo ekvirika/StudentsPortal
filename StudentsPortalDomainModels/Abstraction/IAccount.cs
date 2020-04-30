@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace StudentsPortalDomainModels.Abstraction
 {
-    interface IAccount
+    public interface IAccount
     {
+        string Password { get; set; }
+        string Username { get; set; }
+        int AccountId { get; set; }
+        IStudent Student { get; set; }
+        string ImageUrl { get; set; }
     }
 }

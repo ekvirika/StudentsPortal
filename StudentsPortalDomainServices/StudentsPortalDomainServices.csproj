@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>d9b1904f-4eed-4cfd-9448-71d5fbd8bff5</ProjectGuid>
+    <ProjectGuid>{D9B1904F-4EED-4CFD-9448-71D5FBD8BFF5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>StudentsPortalDomainServices</RootNamespace>
@@ -31,24 +31,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Abstraction\IStudentPortlalService.cs" />
+    <Compile Include="Implementation\LoginHelperService.cs" />
+    <Compile Include="Implementation\StudentPortalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentsPortalDB\StudentsPortalDB.csproj">
+      <Project>{0CE6F006-DF1A-4AB3-B742-3E4A1BB16F1F}</Project>
+      <Name>StudentsPortalDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentsPortalDomainDTOs\StudentsPortalDomainDTOs.csproj">
+      <Project>{9FF2A3F3-8AF0-40C0-B37A-40E002C3BDEA}</Project>
+      <Name>StudentsPortalDomainDTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentsPortalDomainModels\StudentsPortalDomainModels.csproj">
+      <Project>{4BB6324F-8021-4781-BD9B-65EF9790BE01}</Project>
+      <Name>StudentsPortalDomainModels</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

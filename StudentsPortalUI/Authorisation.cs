@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentsPortalApplicationServices.Absraction;
+using StudentsPortalDomainDTOs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +12,21 @@ using System.Windows.Forms;
 
 namespace StudentsPortalUI
 {
-    public partial class Form1 : Form
+    public partial class Authorisation : Form
     {
-        public Form1()
+        public Authorisation()
         {
             InitializeComponent();
+            _service = new 
+        }
+        private readonly IStudentsPortalRepositoryLayer _service;
+        private void SignInBtn_Click(object sender, EventArgs e)
+        {
+            var user = _service.SignInUser(new LoginDTO()
+            {
+                Email = Email.Text,
+                Password = Password.Text
+            });
         }
     }
 }

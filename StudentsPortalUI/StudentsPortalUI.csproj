@@ -46,14 +46,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Authorisation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Authorisation.Designer.cs">
+      <DependentUpon>Authorisation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="StudentsPortalRepositoryLayer.cs" />
+    <Compile Include="StudentsPortalView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentsPortalView.Designer.cs">
+      <DependentUpon>StudentsPortalView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Authorisation.resx">
+      <DependentUpon>Authorisation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +96,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentsPortalApplicationServices\StudentsPortalApplicationServices.csproj">
+      <Project>{839396D7-0FB0-4CB0-B075-9E40FF3A77C2}</Project>
+      <Name>StudentsPortalApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentsPortalDomainDTOs\StudentsPortalDomainDTOs.csproj">
+      <Project>{9FF2A3F3-8AF0-40C0-B37A-40E002C3BDEA}</Project>
+      <Name>StudentsPortalDomainDTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentsPortalDomainModels\StudentsPortalDomainModels.csproj">
+      <Project>{4BB6324F-8021-4781-BD9B-65EF9790BE01}</Project>
+      <Name>StudentsPortalDomainModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
