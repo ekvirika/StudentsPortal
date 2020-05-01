@@ -11,9 +11,11 @@ namespace StudentsPortalApplicationServices.Absraction
     public interface IStudentsPortalRepositoryLayer
     {
         bool RegisterUser(IAccount account);
+        bool SignInAccount(LoginDTO account);
+        bool SignOutAccount(IAccount account);
+
         bool UpdateAccount(IAccount account);
         bool RemoveCurrentAccount(IAccount account);
-        bool SignInAccount(LoginDTO account);
 
 
         List<IAccount> GetAllAccounts();

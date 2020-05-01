@@ -24,14 +24,16 @@ namespace StudentsPortalDB
                 return _instance;
             }
         }
-        private StudentsDB()
+        public StudentsDB()
         {
             _students = new List<IAccount>();
             _fileWorker = new TableDBWorkerService();
         }
+
         protected override int AutoIncrementId { get; set; }
 
         protected override string TablePath => "Students.json";
+        private readonly string _path = "Students.json";
 
         public override void Create(IAccount obj)
         {
@@ -44,7 +46,7 @@ namespace StudentsPortalDB
 
         public override List<IAccount> Read()
         {
-            var accountsFromFile = _fileWorker.ReadFromFile(TablePath);
+            var accountsFromFile = _fileWorker.ReadFromFile(_path);
             if (accountsFromFile.Length > 0)
             {
                 _students = accountsFromFile.ParseList<Account>().ToList<IAccount>();
@@ -65,7 +67,7 @@ namespace StudentsPortalDB
         public override void Delete(IAccount obj)
         {
             InitialiseStudentsCollection();
-            _animals.Remove(obj);
+            _students.Remove(obj);
             WriteInDB();
         }
 

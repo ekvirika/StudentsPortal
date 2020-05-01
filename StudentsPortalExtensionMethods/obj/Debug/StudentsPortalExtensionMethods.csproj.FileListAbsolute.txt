@@ -1,0 +1,9 @@
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\bin\Debug\StudentsPortalExtensionMethods.dll
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\bin\Debug\StudentsPortalExtensionMethods.pdb
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\obj\Debug\StudentsPortalExtensionMethods.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\obj\Debug\StudentsPortalExtensionMethods.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\obj\Debug\StudentsPortalExtensionMethods.csproj.CopyComplete
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\obj\Debug\StudentsPortalExtensionMethods.dll
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalExtensionMethods\obj\Debug\StudentsPortalExtensionMethods.pdb

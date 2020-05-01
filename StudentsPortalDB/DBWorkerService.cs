@@ -23,7 +23,14 @@ namespace StudentsPortalDB
 
         public List<T> Read()
         {
-            return _tableDB.Read();
+            try
+            {
+                return _tableDB.Read();
+            }
+            catch(Exception ex)
+            {
+                return new List<T>();
+            }
         }
 
         public bool Update(T obj)

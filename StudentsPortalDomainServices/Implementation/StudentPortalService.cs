@@ -19,24 +19,23 @@ namespace StudentsPortalDomainServices.Implementation
             _accountsDB = new DBWorkerService<IAccount>(StudentsDB.Instance);
         }
 
-
-        public object MessageBox { get; private set; }
         public bool RegisterNewUser(IAccount user)
         {
             return _accountsDB.Create(user);
 
         }
 
-        public IAccount SearchAccount(string userName)
-        {
-            var user = _accountsDB
-               .Read()
-               .FirstOrDefault(o => o.Username.ToLower() == userName.ToLower());
-            return user;
-        }
+        //public IAccount SearchAccount(string userName)
+        //{
+        //    var user = _accountsDB
+        //       .Read()
+        //       .FirstOrDefault(o => o.Username.ToLower() == userName.ToLower());
+        //    return user;
+        //}
 
         public IAccount SignInUser(LoginDTO user)
         {
+            var tmp = _accountsDB.Read();
             var searchedUser = _accountsDB
               .Read()
               ?.FirstOrDefault(o =>
@@ -53,6 +52,25 @@ namespace StudentsPortalDomainServices.Implementation
         public void SignOutUser()
         {
             LoginHelperService.LogOutUser();
+        }
+
+
+
+
+
+        public void DeleteCurrentAccount(IAccount user)
+        {
+            _accountsDB.Delete(user);
+        }
+
+        public List<IAccount> GetAllAccounts()
+        {
+            return _accountsDB.Read();
+        }
+
+        public void UpdateCurrentAccount(IAccount user)
+        {
+            _accountsDB.Update(user);
         }
     }
 }

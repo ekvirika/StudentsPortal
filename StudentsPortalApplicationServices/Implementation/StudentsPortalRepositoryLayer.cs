@@ -11,23 +11,30 @@ using System.Threading.Tasks;
 
 namespace StudentsPortalApplicationServices.Implementation
 {
-    public class StudentPortalRepositoryLayer : IStudentsPortalRepositoryLayer
+    public class StudentsPortalRepositoryLayer : IStudentsPortalRepositoryLayer
     {
         private readonly IStudentPortlalService _service;
-        public StudentPortalRepositoryLayer()
+        public StudentsPortalRepositoryLayer()
         {
             _service = new StudentPortalService();
         }
 
         public IAccount FindAccountById(int id)
         {
-            return _service.GetAllAnimals().FirstOrDefault(o => o.Id == id);
+            return _service.GetAllAccounts().FirstOrDefault(o => o.AccountId == id);
 
         }
 
         public List<IAccount> GetAllAccounts()
         {
-
+            try
+            {
+                return _service.GetAllAccounts();
+            }
+            catch(Exception ex)
+            {
+                return new List<IAccount>();
+            }
         }
 
         public bool RegisterUser(IAccount account)
@@ -45,7 +52,16 @@ namespace StudentsPortalApplicationServices.Implementation
 
         public bool RemoveCurrentAccount(IAccount account)
         {
-            
+            try
+            {
+                _service.DeleteCurrentAccount(account);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
         }
 
         public bool SignInAccount(LoginDTO account)
@@ -61,10 +77,24 @@ namespace StudentsPortalApplicationServices.Implementation
             }
         }
 
+        public bool SignOutAccount(IAccount account)
+        {
+            try
+            {
+                _service.SignOutUser();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool UpdateAccount(IAccount account)
         {
             try
             {
+                _service.UpdateCurrentAccount(account);
                 return true;
             }
             catch (Exception ex)

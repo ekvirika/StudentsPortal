@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace StudentsPortalApplicationServices.Absraction
 {
-    interface ICloudinaryService
+    public interface ICloudinaryService
     {
+        Bitmap SelectImage();
+        void UploadImage();
     }
+
 }

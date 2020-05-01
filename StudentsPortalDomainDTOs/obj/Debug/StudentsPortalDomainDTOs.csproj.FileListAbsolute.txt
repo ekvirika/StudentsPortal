@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalDomainDTOs\bin\Debug\StudentsPortalDomainDTOs.dll
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalDomainDTOs\bin\Debug\StudentsPortalDomainDTOs.pdb
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalDomainDTOs\obj\Debug\StudentsPortalDomainDTOs.csprojAssemblyReference.cache
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalDomainDTOs\obj\Debug\StudentsPortalDomainDTOs.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalDomainDTOs\obj\Debug\StudentsPortalDomainDTOs.dll
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalDomainDTOs\obj\Debug\StudentsPortalDomainDTOs.pdb

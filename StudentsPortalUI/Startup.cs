@@ -1,4 +1,9 @@
-﻿using System;
+﻿using StudentsPortalApplicationServices.Absraction;
+using StudentsPortalApplicationServices.Implementation;
+using StudentsPortalDB;
+using StudentsPortalDomainModels.Abstraction;
+using StudentsPortalDomainModels.Implementation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +20,8 @@ namespace StudentsPortalUI
 
         public void ConfigureServices()
         {
-            Services.Add()
+            Services.AddAsSingleton<IStudentsPortalRepositoryLayer>(() => new StudentsPortalRepositoryLayer());
+            Services.Add<ICloudinaryService>(() => new CloudinaryService());
         }
     }
 

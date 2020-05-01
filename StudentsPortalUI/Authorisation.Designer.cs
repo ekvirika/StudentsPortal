@@ -113,6 +113,7 @@
             this.RegisterBtn.TabIndex = 3;
             this.RegisterBtn.Text = "Register Now";
             this.RegisterBtn.UseVisualStyleBackColor = false;
+            this.RegisterBtn.Click += new System.EventHandler(this.RegisterBtn_Click);
             // 
             // SignInBtn
             // 

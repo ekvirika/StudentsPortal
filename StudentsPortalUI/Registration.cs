@@ -1,4 +1,5 @@
 ﻿using StudentsPortalApplicationServices.Absraction;
+using StudentsPortalApplicationServices.Implementation;
 using StudentsPortalDomainModels.Abstraction;
 using StudentsPortalDomainModels.Enums;
 using StudentsPortalDomainModels.Implementation;
@@ -33,7 +34,6 @@ namespace StudentsPortalUI
             IAccount tmp = new Account
             {
                 Password = PasswordInp.Text,
-                ImageUrl = ImageUrl.Text,
                 Username = UsernameInp.Text,
                 Student = new Student()
                 {

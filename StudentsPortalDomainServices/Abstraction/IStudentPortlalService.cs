@@ -12,8 +12,12 @@ namespace StudentsPortalDomainServices.Abstraction
     {
         bool RegisterNewUser(IAccount user);
         IAccount SignInUser(LoginDTO user);
-        IAccount SearchAccount(string userName);
+        //IAccount SearchAccount(string userName);
         void SignOutUser();
+
+        List<IAccount> GetAllAccounts();
+        void UpdateCurrentAccount(IAccount user);
+        void DeleteCurrentAccount(IAccount user);
 
     }
 }
