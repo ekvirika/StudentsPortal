@@ -15,7 +15,7 @@ namespace StudentsPortalDomainServices.Abstraction
         //IAccount SearchAccount(string userName);
         void SignOutUser();
 
-        List<IAccount> GetAllAccounts();
+        IEnumerable<IAccount> GetAllAccounts();
         void UpdateCurrentAccount(IAccount user);
         void DeleteCurrentAccount(IAccount user);
 

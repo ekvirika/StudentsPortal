@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,8 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstraction\IAccount.cs" />
+    <Compile Include="Abstraction\IMail.cs" />
     <Compile Include="Abstraction\IStudent.cs" />
+    <Compile Include="Enums\DegreeType.cs" />
     <Compile Include="Enums\GenderType.cs" />
+    <Compile Include="Implementation\Mail.cs" />
     <Compile Include="Implementation\Account.cs" />
     <Compile Include="Implementation\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

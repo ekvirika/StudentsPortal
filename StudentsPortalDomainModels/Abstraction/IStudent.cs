@@ -15,5 +15,7 @@ namespace StudentsPortalDomainModels.Abstraction
         string Email { get; set; }
         GenderType Gender { get; set; }
         string MobilePhone { get; set; }
+        string UniversityName { get; set; }
+        DegreeType Degree { get; set; }
     }
 }

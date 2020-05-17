@@ -14,9 +14,9 @@ namespace StudentsPortalApplicationServices.Implementation
     public class StudentsPortalRepositoryLayer : IStudentsPortalRepositoryLayer
     {
         private readonly IStudentPortlalService _service;
-        public StudentsPortalRepositoryLayer()
+        public StudentsPortalRepositoryLayer(IStudentPortlalService service)
         {
-            _service = new StudentPortalService();
+            _service = service;
         }
 
         public IAccount FindAccountById(int id)
@@ -25,7 +25,7 @@ namespace StudentsPortalApplicationServices.Implementation
 
         }
 
-        public List<IAccount> GetAllAccounts()
+        public IEnumerable<IAccount> GetAllAccounts()
         {
             try
             {
@@ -68,7 +68,8 @@ namespace StudentsPortalApplicationServices.Implementation
         {
             try
             {
-                _service.SignInUser(account);
+                var user = _service.SignInUser(account);
+                Console.WriteLine();
                 return true;
             }
             catch

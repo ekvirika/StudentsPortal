@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentsPortalDomainServices.Implementation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace StudentsPortalUI
         public ProfileSec()
         {
             InitializeComponent();
+        }
+
+        private void ProfileSec_Load(object sender, EventArgs e)
+        {
+            var user = LoginHelperService.GetCurrentUser();
+            if (user != null)
+            {
+
+                Nameuser.Text = $"{user.Student.Name} {user.Student.Surname}";
+                Username.Text = user.Username;
+                Email.Text = user.Student.Email;
+                Age.Text = $"{user.Student.Age.ToString()} Years Old";
+                PhoneNum.Text = user.Student.MobilePhone;
+                Degree.Text = user.Student.Degree.ToString();
+            }
         }
     }
 }

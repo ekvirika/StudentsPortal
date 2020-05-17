@@ -1,6 +1,9 @@
 ﻿using StudentsPortalApplicationServices.Absraction;
 using StudentsPortalApplicationServices.Implementation;
+using StudentsPortalDB;
 using StudentsPortalDomainDTOs;
+using StudentsPortalDomainModels.Abstraction;
+using StudentsPortalDomainModels.Implementation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,17 +20,21 @@ namespace StudentsPortalUI
     {
         public Authorisation()
         {
+            var startup = new Startup();
             InitializeComponent();
+            StudentsDB.InitiliseDelegates(TableDBWorkerService.WriteInFile, TableDBWorkerService.ReadFromFile<Account>);
         }
         private void SignInBtn_Click(object sender, EventArgs e)
         {
-            //var exists = Services.Get<IStudentsPortalRepositoryLayer>().SignInAccount(new LoginDTO()
-            //{
-            //    Email = Email.Text,
-            //    Password = Password.Text
-            //});
-            var _service = new StudentsPortalRepositoryLayer();
-            var user = _service.SignInAccount(new LoginDTO() { Email = Email.Text, Password = Password.Text });
+
+            
+            var user = Services.Get<IStudentsPortalRepositoryLayer>()
+                .SignInAccount(new LoginDTO() 
+                { 
+                    Email = Email.Text, 
+                    Password = Password.Text 
+                });
+
 
             if(user == true)
             {
@@ -47,6 +54,11 @@ namespace StudentsPortalUI
             Form registerForm = new Registration();
             registerForm.Show();
             this.Hide();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

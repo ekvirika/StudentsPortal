@@ -11,9 +11,14 @@ namespace StudentsPortalDB
 {
     public class StudentsDB : TableDB<IAccount>
     {
-        private List<IAccount> _students = default;
+        private StudentsDB()
+        {
+            _students = DBReader?.Invoke(TablePath).ToList<IAccount>();
+            //AutoIncrementId = _students.Count();
+        }
+
+        public List<IAccount> _students = default;
         private static TableDB<IAccount> _instance = default;
-        private readonly TableDBWorkerService _fileWorker = default;
         public static TableDB<IAccount> Instance
         {
             get
@@ -24,40 +29,34 @@ namespace StudentsPortalDB
                 return _instance;
             }
         }
-        public StudentsDB()
-        {
-            _students = new List<IAccount>();
-            _fileWorker = new TableDBWorkerService();
-        }
+ 
 
         protected override int AutoIncrementId { get; set; }
 
         protected override string TablePath => "Students.json";
-        private readonly string _path = "Students.json";
 
         public override void Create(IAccount obj)
-        {
-            InitialiseStudentsCollection();
+        {           
+            //var userExistence = _students
+            //        .FirstOrDefault(o => o.Username == obj.Username || o.Student.Email == obj.Student.Email);
+            //if (userExistence != null)
+            //{
+            //    throw new Exception();
+            //}
+
             obj.AccountId = AutoIncrementId;
             _students.Add(obj);
             WriteInDB();
             AutoIncrementId++;
         }
 
-        public override List<IAccount> Read()
+        public override IEnumerable<IAccount> Read()
         {
-            var accountsFromFile = _fileWorker.ReadFromFile(_path);
-            if (accountsFromFile.Length > 0)
-            {
-                _students = accountsFromFile.ParseList<Account>().ToList<IAccount>();
-
-            }
             return _students;
         }
 
         public override void Update(IAccount obj)
         {
-            InitialiseStudentsCollection();
             var updateElem = _students.FirstOrDefault(o => o.AccountId == obj.AccountId);
             var elemIndex = _students.IndexOf(updateElem);
             _students[elemIndex] = obj;
@@ -66,7 +65,6 @@ namespace StudentsPortalDB
 
         public override void Delete(IAccount obj)
         {
-            InitialiseStudentsCollection();
             _students.Remove(obj);
             WriteInDB();
         }
@@ -76,11 +74,9 @@ namespace StudentsPortalDB
         // CRUD Helper
         public void WriteInDB()
         {
-            _fileWorker.WriteInFile(_students.Stringify<List<IAccount>>(), TablePath);
-        }
-        public void InitialiseStudentsCollection()
-        {
-            _students = Read();
+            //TableDBWorkerService.WriteInFile(_students.Stringify<List<IAccount>>(), TablePath);
+            //TableDBWorkerService.WriteInFile(_students, TablePath);
+            DBWriter?.Invoke(_students, TablePath);
         }
     }
 }

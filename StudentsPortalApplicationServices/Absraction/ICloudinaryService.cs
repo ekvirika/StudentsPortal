@@ -9,7 +9,7 @@ namespace StudentsPortalApplicationServices.Absraction
 {
     public interface ICloudinaryService
     {
-        Bitmap SelectImage();
+        Image SelectImage();
         void UploadImage();
     }
 

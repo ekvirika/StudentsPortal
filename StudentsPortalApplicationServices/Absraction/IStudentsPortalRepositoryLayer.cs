@@ -18,7 +18,7 @@ namespace StudentsPortalApplicationServices.Absraction
         bool RemoveCurrentAccount(IAccount account);
 
 
-        List<IAccount> GetAllAccounts();
+        IEnumerable<IAccount> GetAllAccounts();
         IAccount FindAccountById(int id);
 
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentsPortalDomainModels.Abstraction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,9 @@ namespace StudentsPortalDB
     public class DBWorkerService<T>
     {
         private TableDB<T> _tableDB = default;
-        public DBWorkerService(TableDB<T> instance) { _tableDB = instance; }
+        public DBWorkerService(TableDB<T> instance) {
+            _tableDB = instance;
+        }
 
         public bool Create(T obj)
         {
@@ -21,16 +24,9 @@ namespace StudentsPortalDB
             catch (Exception ex) { return false; }
         }
 
-        public List<T> Read()
+        public IEnumerable<T> Read()
         {
-            try
-            {
-                return _tableDB.Read();
-            }
-            catch(Exception ex)
-            {
-                return new List<T>();
-            }
+            return _tableDB.Read();
         }
 
         public bool Update(T obj)

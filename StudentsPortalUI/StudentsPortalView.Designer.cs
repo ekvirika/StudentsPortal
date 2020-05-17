@@ -34,8 +34,11 @@
             this.ContactsSec = new System.Windows.Forms.Button();
             this.Profile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.MainPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // SettingsSec
@@ -53,6 +56,7 @@
             this.SettingsSec.TabIndex = 2;
             this.SettingsSec.Text = "Settings";
             this.SettingsSec.UseVisualStyleBackColor = false;
+            this.SettingsSec.Click += new System.EventHandler(this.SettingsSec_Click);
             // 
             // MessagesSec
             // 
@@ -69,6 +73,7 @@
             this.MessagesSec.TabIndex = 3;
             this.MessagesSec.Text = "Messages";
             this.MessagesSec.UseVisualStyleBackColor = false;
+            this.MessagesSec.Click += new System.EventHandler(this.MessagesSec_Click);
             // 
             // ContactsSec
             // 
@@ -83,8 +88,9 @@
             this.ContactsSec.Name = "ContactsSec";
             this.ContactsSec.Size = new System.Drawing.Size(205, 65);
             this.ContactsSec.TabIndex = 4;
-            this.ContactsSec.Text = "Contacts";
+            this.ContactsSec.Text = "Students";
             this.ContactsSec.UseVisualStyleBackColor = false;
+            this.ContactsSec.Click += new System.EventHandler(this.ContactsSec_Click);
             // 
             // Profile
             // 
@@ -105,25 +111,45 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(201)))), ((int)(((byte)(201)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(227, 637);
             this.panel1.TabIndex = 6;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 586);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 38);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(224, 3);
+            this.panel2.Location = new System.Drawing.Point(230, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(828, 631);
+            this.panel2.Size = new System.Drawing.Size(822, 631);
             this.panel2.TabIndex = 7;
+            // 
+            // MainPanel
+            // 
+            this.MainPanel.Location = new System.Drawing.Point(241, 1);
+            this.MainPanel.Name = "MainPanel";
+            this.MainPanel.Size = new System.Drawing.Size(807, 621);
+            this.MainPanel.TabIndex = 7;
             // 
             // StudentsPortalView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(61)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1049, 631);
+            this.ClientSize = new System.Drawing.Size(1064, 634);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.SettingsSec);
             this.Controls.Add(this.MessagesSec);
             this.Controls.Add(this.ContactsSec);
@@ -131,10 +157,12 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("SF Pro Display", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StudentsPortalView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StudentsPortalView";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,5 +175,7 @@
         private System.Windows.Forms.Button Profile;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel MainPanel;
     }
 }

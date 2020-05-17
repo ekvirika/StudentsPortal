@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalUnitTests\bin\Debug\StudentsPortalUnitTests.exe.config
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalUnitTests\bin\Debug\StudentsPortalUnitTests.exe
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalUnitTests\bin\Debug\StudentsPortalUnitTests.pdb
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalUnitTests\obj\Debug\StudentsPortalUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalUnitTests\obj\Debug\StudentsPortalUnitTests.exe
+C:\Users\user\Desktop\Programming\Homeworks\CSharp\StudentsPortal\StudentsPortalUnitTests\obj\Debug\StudentsPortalUnitTests.pdb

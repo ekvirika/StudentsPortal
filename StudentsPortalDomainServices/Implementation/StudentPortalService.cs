@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace StudentsPortalDomainServices.Implementation
 {
@@ -22,24 +23,14 @@ namespace StudentsPortalDomainServices.Implementation
         public bool RegisterNewUser(IAccount user)
         {
             return _accountsDB.Create(user);
-
         }
 
-        //public IAccount SearchAccount(string userName)
-        //{
-        //    var user = _accountsDB
-        //       .Read()
-        //       .FirstOrDefault(o => o.Username.ToLower() == userName.ToLower());
-        //    return user;
-        //}
 
         public IAccount SignInUser(LoginDTO user)
         {
-            var tmp = _accountsDB.Read();
-            var searchedUser = _accountsDB
-              .Read()
+            var searchedUser = GetAllAccounts()
               ?.FirstOrDefault(o =>
-              o.Student.Email == user.Email || o.Username == user.UserName &&
+              o.Student.Email == user.Email || 
               o.Password == user.Password);
 
             if (searchedUser != null)
@@ -55,22 +46,27 @@ namespace StudentsPortalDomainServices.Implementation
         }
 
 
-
-
-
         public void DeleteCurrentAccount(IAccount user)
         {
             _accountsDB.Delete(user);
         }
 
-        public List<IAccount> GetAllAccounts()
+        public IEnumerable<IAccount> GetAllAccounts()
         {
-            return _accountsDB.Read();
+            return _accountsDB?.Read();
         }
 
         public void UpdateCurrentAccount(IAccount user)
         {
             _accountsDB.Update(user);
         }
+
+        //public IAccount SearchAccount(string userName)
+        //{
+        //    var user = _accountsDB
+        //       .Read()
+        //       .FirstOrDefault(o => o.Username.ToLower() == userName.ToLower());
+        //    return user;
+        //}
     }
 }

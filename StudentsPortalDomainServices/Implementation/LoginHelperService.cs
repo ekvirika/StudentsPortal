@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentsPortalDomainServices.Implementation
 {
-    public class LoginHelperService
+    public static class LoginHelperService
     {
         private static IAccount _loggedInUser = default;
         public static void LoginUser(IAccount obj) => _loggedInUser = obj;

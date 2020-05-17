@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace StudentsPortalDomainModels.Enums
 {
-    public enum  GenderType { Male, Female, Other}
+    public enum  GenderType { Male =1, Female, Other}
 }

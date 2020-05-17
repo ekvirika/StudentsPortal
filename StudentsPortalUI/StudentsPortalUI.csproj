@@ -52,6 +52,12 @@
     <Compile Include="Authorisation.Designer.cs">
       <DependentUpon>Authorisation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProfileSec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +73,19 @@
       <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="Services.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Students.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Students.Designer.cs">
+      <DependentUpon>Students.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentsPortalView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +94,9 @@
     </Compile>
     <EmbeddedResource Include="Authorisation.resx">
       <DependentUpon>Authorisation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfileSec.resx">
       <DependentUpon>ProfileSec.cs</DependentUpon>
@@ -92,9 +113,18 @@
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Students.resx">
+      <DependentUpon>Students.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentsPortalView.resx">
       <DependentUpon>StudentsPortalView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,6 +154,10 @@
     <ProjectReference Include="..\StudentsPortalDomainModels\StudentsPortalDomainModels.csproj">
       <Project>{4BB6324F-8021-4781-BD9B-65EF9790BE01}</Project>
       <Name>StudentsPortalDomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentsPortalDomainServices\StudentsPortalDomainServices.csproj">
+      <Project>{D9B1904F-4EED-4CFD-9448-71D5FBD8BFF5}</Project>
+      <Name>StudentsPortalDomainServices</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,35 +8,72 @@ using System.Threading.Tasks;
 
 namespace StudentsPortalDB
 {
-    public class TableDBWorkerService
+    public static class TableDBWorkerService
     {
-        public void WriteInFile(string userData, string path)
+        //public static void WriteInFile(string userData, string path)
+        //{
+        //    if (!File.Exists(path))
+        //    {
+        //        File.Create(path);
+        //    }
+        //    using (StreamWriter writer = new StreamWriter(path, false))
+        //    {
+        //        writer.WriteLine(userData);
+        //    }
+        //}
+
+        //public static string ReadFromFile(string path)
+        //{
+        //    try
+        //    {
+        //        var data = string.Empty;
+        //        using (StreamReader reader = new StreamReader(path))
+        //        {
+        //            data = reader.ReadToEnd();
+        //        }
+
+        //        return data;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return string.Empty;
+        //    }
+        //}
+
+        public static void WriteInFile<T>(List<T> collection, string path)
         {
-            if (!File.Exists(path))
+            var json = JsonConvert.SerializeObject(collection);
+
+            var fileExists = File.Exists(path);
+            if (!fileExists)
             {
-                File.Create(path);
+                var stream = File.Create(path);
+                stream.Dispose();
             }
+
             using (StreamWriter writer = new StreamWriter(path, false))
             {
-                writer.WriteLine(userData);
+                writer.Write(json);
             }
         }
 
-        public string ReadFromFile(string path)
+        public static IEnumerable<T> ReadFromFile<T>(string path)
         {
             try
             {
-                var data = string.Empty;
+                var json = string.Empty;
                 using (StreamReader reader = new StreamReader(path))
                 {
-                    data = reader.ReadToEnd();
+                    json = reader.ReadToEnd();
                 }
 
+                var data = JsonConvert.DeserializeObject<List<T>>(json);
                 return data;
+
             }
             catch (Exception ex)
             {
-                return string.Empty;
+                return new List<T>();
             }
         }
     }

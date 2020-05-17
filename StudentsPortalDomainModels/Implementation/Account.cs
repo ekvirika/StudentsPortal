@@ -2,6 +2,7 @@
 using StudentsPortalDomainModels.Abstraction;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace StudentsPortalDomainModels.Implementation
         public string Password { get; set; }
         public string Username { get; set; }
         public IStudent Student { get; set; }
-        public string ImageUrl { get; set; }
+        //public Bitmap Image { get; set; }
         public int AccountId { get; set; }
     }
 

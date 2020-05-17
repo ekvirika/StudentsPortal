@@ -16,6 +16,7 @@ namespace StudentsPortalDomainModels.Implementation
         public string Email { get; set; }
         public GenderType Gender { get; set ; }
         public string MobilePhone { get; set; }
-
+        public string UniversityName { get; set; }
+        public DegreeType Degree { get; set; }
     }
 }
